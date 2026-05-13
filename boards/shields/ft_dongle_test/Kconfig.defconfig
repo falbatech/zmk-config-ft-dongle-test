@@ -1,0 +1,18 @@
+if SHIELD_FT_DONGLE_TEST
+
+config ZMK_KEYBOARD_NAME
+    default "FT Dongle Test"
+
+# Aktywujemy PWM driver
+config PWM
+    default y
+
+# Aktywujemy LED driver (pwm-leds)
+config LED
+    default y
+
+# Wymagane przez Zephyr dla sterowania urządzeniami z device drivers
+config DEVICE_DEPS
+    default y
+
+endif

@@ -1,0 +1,18 @@
+/*
+ * FT Dongle Test - minimalny shield do testu PWM backlight
+ * Tylko PWM na D5 (P0.24) - sprawdza czy fizyczne połączenie BL działa
+ */
+
+/ {
+    pwmleds {
+        compatible = "pwm-leds";
+        bl_pwm: pwm_led_0 {
+            pwms = <&pwm0 0 PWM_MSEC(1) PWM_POLARITY_NORMAL>;
+            label = "Display backlight";
+        };
+    };
+
+    aliases {
+        bl-pwm = &bl_pwm;
+    };
+};
