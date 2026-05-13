@@ -1,9 +1,23 @@
 /*
  * FT Dongle Test - minimalny shield do testu PWM backlight
- * Tylko PWM na D5 (P0.24) - sprawdza czy fizyczne połączenie BL działa
+ * Tylko PWM na D5 (P0.24) + minimalny mock kscan żeby ZMK się skompilowało
  */
 
+#include <dt-bindings/zmk/matrix_transform.h>
+
 / {
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
+
+    /* Fake kscan - ZMK wymaga jakiegokolwiek kscan + matrix transform */
+    mock_kscan: mock_kscan {
+        compatible = "zmk,kscan-mock";
+        columns = <1>;
+        rows = <0>;
+        events = <>;
+    };
+
     pwmleds {
         compatible = "pwm-leds";
         bl_pwm: pwm_led_0 {
