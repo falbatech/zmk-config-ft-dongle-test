@@ -1,0 +1,18 @@
+/*
+ * FT Dongle Test - minimalny keymap
+ * Nie mamy fizycznych klawiszy, więc keymap to placeholder.
+ * Test sprawdza tylko PWM backlight przez SYS_INIT w src/blink_test.c
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <&none>;
+        };
+    };
+};
