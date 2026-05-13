@@ -1,5 +1,4 @@
----
 include:
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: ft_dongle_test
     artifact-name: ft_dongle_test
